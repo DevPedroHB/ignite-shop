@@ -1,20 +1,18 @@
 import { AppProps } from "next/app";
-import Image from "next/image";
-import logoImg from "../assets/logo.svg";
+import { Header } from "../components/Header";
+import { CartContextProvider } from "../contexts/CartContext";
 import { globalStyles } from "../styles/global";
-import { Container, Header } from "../styles/pages/app";
+import { Container } from "../styles/pages/app";
 
 globalStyles();
 
-function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: AppProps) {
   return (
-    <Container>
-      <Header>
-        <Image src={logoImg} alt="Logotipo Ignite Shop" />
-      </Header>
-      <Component {...pageProps} />
-    </Container>
+    <CartContextProvider>
+      <Container>
+        <Header />
+        <Component {...pageProps} />
+      </Container>
+    </CartContextProvider>
   );
 }
-
-export default App;

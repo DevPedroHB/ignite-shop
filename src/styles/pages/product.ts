@@ -1,18 +1,19 @@
-import { styled } from "..";
+import { styled } from "@stitches/react";
 
 export const ProductContainer = styled("main", {
   display: "grid",
   gridTemplateColumns: "1fr 1fr",
   alignItems: "stretch",
   gap: "4rem",
-  maxWidth: 1180,
+  maxWidth: "73.75rem",
   margin: "0 auto",
+  paddingBottom: "2rem",
 });
 
 export const ImageContainer = styled("div", {
   width: "100%",
   maxWidth: 576,
-  height: 656,
+  height: "calc(41rem - 0.5rem)",
   background: "linear-gradient(180deg, #1ea483 0%, #7465d4 100%)",
   borderRadius: 8,
   padding: "0.25rem",
